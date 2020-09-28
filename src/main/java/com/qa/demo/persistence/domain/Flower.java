@@ -31,6 +31,9 @@ public class Flower {
 
 	@Column(nullable = false)
 	private boolean poisonous;
+	
+	@Column(nullable = false)
+	private String seller;
 
 	@ManyToOne // The class it relates to
 	private Garden garden;
@@ -104,6 +107,14 @@ public class Flower {
 	}
 	
 
+	public String getSeller() {
+		return seller;
+	}
+
+	public void setSeller(String seller) {
+		this.seller = seller;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -127,6 +138,12 @@ public class Flower {
 			return false;
 		if (id != other.id)
 			return false;
+		if (seller == null) {
+			if (other.seller != null) {
+				return false;
+			}else if (!seller.equals(other.seller))
+				return false;
+		}
 		if (poisonous != other.poisonous)
 			return false;
 		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
@@ -142,7 +159,7 @@ public class Flower {
 	@Override
 	public String toString() {
 		return "Flower [id=" + id + ", type=" + type + ", height=" + height + ", colour=" + colour + ", price=" + price
-				+ ", poisonous=" + poisonous + ", garden=" + garden + "]";
+				+ ", poisonous=" + poisonous + ", seller=" + seller + ", garden=" + garden + "]";
 	}
 
 }

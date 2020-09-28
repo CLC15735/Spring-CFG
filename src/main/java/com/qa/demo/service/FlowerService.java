@@ -64,6 +64,7 @@ public class FlowerService {
 		toUpdate.setHeight(flower.getHeight());
 		toUpdate.setPoisonous(flower.isPoisonous());
 		toUpdate.setPrice(flower.getPrice());
+		toUpdate.setSeller(flower.getSeller());
 		
 		Flower updated =  this.repo.save(toUpdate);
 		return this.mapToDTO(updated);

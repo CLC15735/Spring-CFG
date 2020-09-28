@@ -13,8 +13,10 @@ public class FlowerDTO {
 	private double price;
 
 	private boolean poisonous;
+	
+	private String seller;
 
-	public FlowerDTO(long id, String type, int height, String colour, double price, boolean poisonous) {
+	public FlowerDTO(long id, String type, int height, String colour, double price, boolean poisonous, String seller) {
 		super();
 		this.id = id;
 		this.type = type;
@@ -22,6 +24,7 @@ public class FlowerDTO {
 		this.colour = colour;
 		this.price = price;
 		this.poisonous = poisonous;
+		this.seller = seller;
 	}
 
 	public FlowerDTO() {
@@ -75,5 +78,15 @@ public class FlowerDTO {
 	public void setPoisonous(boolean poisonous) {
 		this.poisonous = poisonous;
 	}
+
+	public String getSeller() {
+		return seller;
+	}
+
+	public void setSeller(String seller) {
+		this.seller = seller;
+	}
+	
+	
 
 }
