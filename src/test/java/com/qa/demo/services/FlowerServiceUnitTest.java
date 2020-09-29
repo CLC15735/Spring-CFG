@@ -21,7 +21,7 @@ import com.qa.demo.service.FlowerService;
 @RunWith(MockitoJUnitRunner.class)
 public class FlowerServiceUnitTest {
 
-	private final Flower FLOWER = new Flower("orchid", 27, "white", 44.94, false);
+	private final Flower FLOWER = new Flower("orchid", 27, "white", 44.94, false, "verdecora");
 
 	private Flower savedFlower;
 
@@ -34,7 +34,7 @@ public class FlowerServiceUnitTest {
 	@Before
 	public void init() {
 		this.savedFlower = new Flower(FLOWER.getType(), FLOWER.getHeight(), FLOWER.getColour(), FLOWER.getPrice(),
-				FLOWER.isPoisonous());
+				FLOWER.isPoisonous(), FLOWER.getSeller());
 		this.savedFlower.setId(1L);
 	}
 
@@ -51,8 +51,8 @@ public class FlowerServiceUnitTest {
 	public void testUpdate() {
 		Mockito.when(this.repo.findById(savedFlower.getId())).thenReturn(Optional.of(savedFlower));
 
-		Flower newFlower = new Flower("piers", 5, "white", 0, true);
-		Flower newFlowerWthID = new Flower(newFlower.getType(), newFlower.getHeight(), newFlower.getColour(), newFlower.getPrice(), newFlower.isPoisonous());
+		Flower newFlower = new Flower("piers", 5, "white", 0, true, "FlowerCo");
+		Flower newFlowerWthID = new Flower(newFlower.getType(), newFlower.getHeight(), newFlower.getColour(), newFlower.getPrice(), newFlower.isPoisonous(), newFlower.getSeller());
 		newFlowerWthID.setId(savedFlower.getId());
 
 		Mockito.when(this.repo.save(newFlowerWthID)).thenReturn(newFlowerWthID);

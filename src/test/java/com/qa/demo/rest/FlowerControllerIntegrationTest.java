@@ -48,7 +48,7 @@ public class FlowerControllerIntegrationTest {
 	public void init() {
 		this.repo.deleteAll();
 
-		this.flower = new Flower("tulip", 34, "purple", 34.54, false);
+		this.flower = new Flower("tulip", 34, "purple", 34.54, false, "verdecora");
 
 		this.savedFlower = this.repo.save(this.flower);
 

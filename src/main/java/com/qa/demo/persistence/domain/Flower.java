@@ -41,13 +41,14 @@ public class Flower {
 	public Flower() { // Entities MUST have a default constructor
 	}
 
-	public Flower(String type, int height, String colour, double price, boolean poisonous) {
+	public Flower(String type, int height, String colour, double price, boolean poisonous, String seller) {
 		super();
 		this.type = type;
 		this.height = height;
 		this.colour = colour;
 		this.price = price;
 		this.poisonous = poisonous;
+		this.seller = seller;
 	}
 
 	public String getColour() {
